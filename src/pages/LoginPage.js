@@ -106,7 +106,7 @@ class LoginPage extends Component {
                     >
                       Create Account
                     </IonButton>
-                    <IonButton  routerLink={`/tab1-detail/90m7LNZYCjgacTHXrLyH`}>View</IonButton>
+                    <IonButton  routerLink={`/tab1-detail/` /*Insert id of the task to get its url*/ }>View</IonButton>
                   </div>
                 </>
               );
