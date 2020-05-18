@@ -87,7 +87,8 @@ export class Store {
       return firebaseService
         .loginWithEmail(_username, _password)
         .then(
-          _result => {
+          _result => { 
+            console.log(_result.credential.toJSON())
             return true;
           },
           err => {

@@ -11,8 +11,8 @@ class TabTwoPage extends Component {
 
   _onLogoutClick = async e => {
     e.preventDefault();
-    await this.props.store.doLogout();
-    this.props.history.push("/login");
+    await this.props.store.doLogout();    
+    //this.props.history.push("/login");
   };
 
   render() {

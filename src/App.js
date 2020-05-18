@@ -5,6 +5,7 @@ import { IonApp, IonRouterOutlet, IonSpinner } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 
 import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute2 from "./components/PrivateRoute2";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import RegistrationPage from "./pages/RegistrationPage";
@@ -25,22 +26,29 @@ class App extends Component {
         <IonSpinner name="circles" />
       </div>
     ) : (
-      <IonReactRouter>
         <IonApp>
-          <Switch>
-            <Redirect exact from="/" to="home" />
-            <Route path="/login" component={LoginPage} />
+      <IonReactRouter>
+      <Switch>
+            <Route path="/register" component={RegistrationPage} />
             <IonRouterOutlet>
-              <Route path="/register" component={RegistrationPage} />
-              <PrivateRoute name="home" path="/home" component={HomePage} />
-              <PrivateRoute
+            <Redirect exact from="/" to="home" />
+              <Route path="/login" component={LoginPage} />
+            
+              <PrivateRoute2 name="home" path="/home" component={HomePage} />
+              
+              <PrivateRoute2
+                path="/tab1-detail2/:id"
+                component={TabOneDetailPage}
+              />
+              <PrivateRoute2
                 path="/tab1-detail/:id"
                 component={TabOneDetailPage}
               />
             </IonRouterOutlet>
-          </Switch>
-        </IonApp>
+            
+            </Switch>
       </IonReactRouter>
+        </IonApp>
     );
   }
 }

@@ -1,8 +1,11 @@
 import * as firebase from "firebase"; // 4.3.0
-require("firebase/firestore");
+//require("firebase/auth");
+//require("firebase/firestore");
 
 var firebaseConfig = {
-
+  apiKey: "AIzaSyAdLD8f_VBTUZr2j4gBp7JlXzzLfAjVB-Y",
+  applicationId: "1:551907965642:web:58d1b10dabb017fb185233",
+  projectId: "testtodos-28544"
 };
 
 // Ensure that you do not login twice.
@@ -127,7 +130,9 @@ export const queryObjectCollection = ({ collection }) => {
 
   return (
     collectionRef
-      //.where('owner', '==', currentUserId)
+    
+      .where('owner', '==', currentUserId)
+      //.where('content.subject', '==', 'Nom')
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {

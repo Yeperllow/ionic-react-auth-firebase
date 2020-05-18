@@ -8,7 +8,8 @@ import {
   IonContent,
   IonButtons,
   IonMenuButton,
-  IonBackButton
+  IonBackButton,
+  IonPage
 } from "@ionic/react";
 /**
  * helper Ionic Page which laysout the framework of the page so
@@ -19,7 +20,7 @@ import {
  */
 const BasicPage = ({ title, renderContent, history, hasMenu, backAction }) => {
   return (
-    <>
+    <IonPage>
       <IonHeader>
         <IonToolbar color="primary">
           <IonButtons slot="start">
@@ -30,7 +31,7 @@ const BasicPage = ({ title, renderContent, history, hasMenu, backAction }) => {
         </IonToolbar>
       </IonHeader>
       <IonContent padding>{renderContent(history)}</IonContent>
-    </>
+    </IonPage>
   );
 };
 BasicPage.propTypes = {

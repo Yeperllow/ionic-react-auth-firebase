@@ -53,10 +53,11 @@ class LoginPage extends Component {
   };
 
   render() {
-    let { isAuth, initializationError, activeUser } = this.props.store;
+    let { isAuth, initializationError, authenticatedUser } = this.props.store;
 
-    if (activeUser) {
+    if (authenticatedUser) {
       return <Redirect to="/home" />;
+      //return;
     } else {
       return (
         <>
@@ -105,6 +106,7 @@ class LoginPage extends Component {
                     >
                       Create Account
                     </IonButton>
+                    <IonButton  routerLink={`/tab1-detail/90m7LNZYCjgacTHXrLyH`}>View</IonButton>
                   </div>
                 </>
               );

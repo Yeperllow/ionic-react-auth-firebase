@@ -13,6 +13,18 @@ import { inject } from "mobx-react";
 const TabOneDetailPage = (props) => {
   let { store, match} = props
   let value = store.itemByKey(match.params.id);
+  console.log('TabOneDetailPage ' +match.params.id)
+  if(value == null){
+    return (
+      <BasicPage
+      title="Page One Detail"
+      backAction={(e, history) => {}}
+      renderContent={history => {
+        return (<IonText>Task {match.params.id} not found</IonText>)
+      }}
+      />);
+  }
+  
 
   return (
     <BasicPage

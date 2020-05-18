@@ -12,6 +12,7 @@ const TabContainer = ({ history, changedTabs, addItem , showAddItemModal}) => {
   return (
     <ion-tabs
       ionTabsDidChange={e => {
+        //in case of using keyboard or something other than click
         changedTabs(e);
       }}
     >
@@ -28,7 +29,7 @@ const TabContainer = ({ history, changedTabs, addItem , showAddItemModal}) => {
 
       <ion-tab-bar slot="bottom">
         <ion-tab-button tab="tab1" onClick={changedTabs}>
-          <ion-label>Home</ion-label>
+          <ion-label>Home Tab</ion-label>
         </ion-tab-button>
 
         <ion-tab-button tab="tab2" onClick={changedTabs}>

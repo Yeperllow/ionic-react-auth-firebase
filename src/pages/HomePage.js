@@ -59,6 +59,7 @@ class HomePage extends Component {
                 >
                   ADD ITEM
                 </IonButton>
+                <IonButton  routerLink={`/register`}>View</IonButton>
               </IonButtons>
             ) : null}
           </IonToolbar>

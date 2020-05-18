@@ -25,25 +25,27 @@ class TabOnePage extends Component {
   }
 
   /**
-   *
+   * 
    */
   _renderItems = () => {
     return this.props.store.itemEntries.map(([key, value]) => {
       return (
         <IonItemSliding key={key}>
-          <IonItem
+          <IonItem routerDirection='forward' routerLink={`/tab1-detail/${key}`}
             onClick={e => {
-              if (!e.currentTarget) {
-                return;
-              }
-              e.preventDefault();
-              this.props.history.push("/tab1-detail/" + key);
+              //if (!e.currentTarget) {
+              //  return;
+              //}
+              //e.preventDefault();
+              //this.props.history.push("/tab1-detail/" + key);
+              
             }}
           >
             <IonLabel text-wrap>
               <IonText color="primary">
                 <h3>{value.content.subject}</h3>
               </IonText>
+
               <p>{value.content.body}</p>
               <IonText color="secondary">
                 <p>{value.content.dueDate}</p>
